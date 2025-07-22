@@ -1,16 +1,16 @@
 # >>> IS IDENTIFIER
-# name: CI/CD Tests
+ name: CI/CD Tests
 
-# >>> IS TRIGGER
-# on:
-#   push:
-#     branches:
-#       - main
-#     tags:
-#       - "*"
-#   pull_request:
-#     branches:
-#       - "*"
+>>> IS TRIGGER
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
 
 jobs:
   # >>> NOT CI
