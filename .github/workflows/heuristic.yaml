@@ -16,8 +16,22 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
         run: |
-          sudo apt update
-          sudo apt install -y adduser base-files bash bash-completion command-not-found cron debconf distro-info-data e2fsprogs fuse3 gettext-base git hdparm keyutils libattr1:amd64 libaudit-common libbrotli1:amd64 libbsd0:amd64 libc-bin libc6:amd64 libfontconfig1:amd64 libfreetype6:amd64 libmagic1:amd64 libmd0:amd64 libmecab2:amd64 libpam-runtime libpcre2-8-0:amd64 libpng16-16:amd64 libpython3.11-minimal:amd64 libpython3.11-stdlib:amd64 libsensors-config libtcl8.6:amd64 libtirpc-common libtk8.6:amd64 libx11-6:amd64 libxau6:amd64 libxcb1:amd64 libxdmcp6:amd64 libxext6:amd64 libxft2:amd64 libxrender1:amd64 libxss1:amd64 locales login logrotate lsb-release ltrace mailcap man-db media-types multipath-tools nano ncurses-base netbase nftables openssl overlayroot procps python3-tk:amd64 python3-zope.interface python3.11-minimal rsyslog screen sudo tar tk8.6-blt2.5 tzdata ucf unixodbc-common usb-modeswitch walinuxagent wget
+           - name: Install dependencies
+  run: |
+    sudo apt update
+    sudo apt install -y \
+      adduser base-files bash bash-completion command-not-found cron debconf distro-info-data \
+      e2fsprogs fuse3 gettext-base git hdparm keyutils libattr1:amd64 libaudit-common libbrotli1:amd64 \
+      libbsd0:amd64 libc-bin libc6:amd64 libfontconfig1:amd64 libfreetype6:amd64 libmagic1:amd64 \
+      libmd0:amd64 libmecab2:amd64 libpam-runtime libpcre2-8-0:amd64 libpng16-16:amd64 \
+      libpython3.12-minimal:amd64 libpython3.12-stdlib:amd64 python3.12-minimal \
+      libsensors-config libtcl8.6:amd64 libtirpc-common libtk8.6:amd64 libx11-6:amd64 \
+      libxau6:amd64 libxcb1:amd64 libxdmcp6:amd64 libxext6:amd64 libxft2:amd64 libxrender1:amd64 \
+      libxss1:amd64 locales login logrotate lsb-release ltrace mailcap man-db media-types \
+      multipath-tools nano ncurses-base netbase nftables openssl overlayroot procps \
+      python3-tk:amd64 python3-zope.interface \
+      rsyslog screen sudo tar tk8.6-blt2.5 tzdata ucf unixodbc-common usb-modeswitch \
+      walinuxagent wget
       - run: |
           python -m pip install --upgrade pip
       - run: |
