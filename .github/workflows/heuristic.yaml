@@ -16,10 +16,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
         run: |
-           - name: Install dependencies
-        run: |
-              sudo apt update
-              sudo apt install -y \
+           sudo apt update
+           sudo apt install -y \
                 adduser base-files bash bash-completion command-not-found cron debconf distro-info-data \
                 e2fsprogs fuse3 gettext-base git hdparm keyutils libattr1:amd64 libaudit-common libbrotli1:amd64 \
                 libbsd0:amd64 libc-bin libc6:amd64 libfontconfig1:amd64 libfreetype6:amd64 libmagic1:amd64 \
