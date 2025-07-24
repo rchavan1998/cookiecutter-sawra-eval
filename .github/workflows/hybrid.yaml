@@ -25,8 +25,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Dependencies
-        run: python3-tk tk8.6-blt2.5
+      - name: Install System Dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt update
+          sudo apt install -y python3-tk tk8.6-blt2.5
+
       - run: |
           python -m pip install --upgrade pip
       - run: |
